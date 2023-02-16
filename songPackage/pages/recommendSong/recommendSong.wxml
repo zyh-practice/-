@@ -1,0 +1,37 @@
+<!--pages/recommendSong/recommendSong.wxml-->
+<view class="recommendSongContainer">
+
+<!-- 头部区域 -->
+  <view class="header">
+     <image src="/static/images/recommendSong/recommendSong.jpg"></image>
+  </view>
+  <view class="data">
+     <text class="hour">{{date.hour}} /</text>
+     <text class="monute">{{date.minute}} /</text>
+     <text class="second">{{date.second}}</text>
+  </view>
+  
+
+  <!-- 列表区 -->
+  <view class="listContainer">
+     <view class="listHeader">
+       <text class="">播放全部</text>
+       <text class="changeMore">多选</text>
+     </view>
+
+     <!-- 内容区 -->
+     <scroll-view scroll-y class="listScroll">
+       <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id" 
+      data-song="{{item}}" data-index="{{index}}"
+       bindtap="toSongDetail">
+          <image src="{{item.album.picUrl}}"></image>
+          <view class="musicInfo">
+             <text class="musicName">{{item.name}}</text>
+             <text class="author">{{item.artists[0].name}}</text>
+          </view>
+          <text class="iconfont icon-gengduo"></text>
+       </view>
+       
+     </scroll-view>
+  </view>
+</view>

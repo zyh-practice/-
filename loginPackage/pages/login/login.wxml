@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="wrapper">
+    <view class="left-top-sign">LOGIN</view>
+    <view class="welcome">
+      欢迎回来！
+    </view>
+    <view class="input-content">
+      <view class="input-item">
+        <text class="tit">手机号码</text>
+        <input class="input"  type="text" placeholder="请输入手机号码" model:value="{{phone}}" />
+        <button class="getTip" size="mini" plain type="warn" bindtap="getTip">获取验证码</button>
+      </view>
+      <view class="input-item">
+        <text class="tit">验证码</text>
+        <input type="password" maxlength='4'  placeholder="请输入验证码" model:value="{{tip}}" />
+      </view>
+    </view>
+    <button class="confirm-btn" bindtap="login">登录</button>
+  </view>
+  <view class="register-section">
+    还没有账号?
+    <text >马上注册</text>
+  </view>
+</view>

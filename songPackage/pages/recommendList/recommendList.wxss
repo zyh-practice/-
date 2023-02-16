@@ -1,0 +1,166 @@
+/* pages/recommendList/recommendList.wxss */
+.recommendContain{
+    margin: 0 20rpx;
+}
+.header{
+    
+    margin-top: 10rpx;
+    display: flex;
+}
+.header image{
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 20rpx;
+    box-shadow: 10rpx 10rpx 10rpx #727070;
+}
+.dataContain{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 40rpx;
+}
+.header .button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    line-height: 50rpx;
+    font-size: 30rpx;
+    width: 250rpx;
+    height: 50rpx;
+}
+.bangName{
+    font-size: 50rpx;
+}
+.updataTime{
+    font-size: 26rpx;
+}
+.button view{
+    border-radius: 10rpx;
+    text-align: center;
+    width: 100rpx;
+    background-color: #D43C33;
+    color: white;
+    box-shadow: 4rpx 4rpx 4rpx #7a7979;
+}
+
+
+/* 歌曲列表去 */
+.bar-contain{
+    margin-top: 50rpx;
+}
+.bar-header-contain{
+    display: flex;
+    height: 50rpx;
+    justify-content: space-between;
+    padding-bottom: 15rpx;
+    border-bottom: 4rpx solid #D43C33;
+}
+.musicListContent{
+    line-height: 50rpx;
+    font-size: 40rpx;
+}
+.musicCount{
+    font-size: 26rpx;
+    margin-top: 15rpx;
+    margin-left:-50rpx;
+}
+.dlCount{
+    font-size: 26rpx;
+    margin-top: 15rpx;
+}
+/* 歌曲区域 */
+.musicContent{
+    border: 4rpx solid #D9D9D9;
+    border-bottom: none;
+    width: 100%;
+   
+}
+.music-header{
+    display: flex;
+    height: 50rpx;
+}
+.indexContent{
+    flex:1;
+    border-right: 4rpx solid #D9D9D9;
+    border-bottom: 4rpx solid #D9D9D9;
+    box-shadow: 1rpx 2rpx 1rpx #cac4c4;
+}
+.titleContent{
+    flex: 4;
+    line-height: 50rpx;
+    border-right: 4rpx solid #D9D9D9;
+    border-bottom: 4rpx solid #D9D9D9;
+    padding-left: 20rpx;
+    box-shadow: 1rpx 2rpx 1rpx #cac4c4;
+}
+.lengthContent{
+    flex: 1;
+    line-height: 50rpx;
+    border-right: 4rpx solid #D9D9D9;
+    border-bottom: 4rpx solid #D9D9D9;
+    padding-left: 20rpx;
+    box-shadow: 1rpx 2rpx 1rpx #cac4c4;
+}
+.articContent{
+    flex:2;
+    line-height: 50rpx;
+    border-bottom: 4rpx solid #D9D9D9;
+    padding-left: 20rpx;
+    box-shadow: 1rpx 2rpx 1rpx #cac4c4;
+}
+
+
+
+.music-bar{
+    display: flex;
+    height: 100rpx;
+    padding-top: 10rpx;
+}
+.index{
+    flex:1;
+    line-height: 100rpx;
+    text-align: center;
+}
+.title{
+    flex: 4;
+    line-height: 100rpx;
+    display: flex;
+    align-items: center;
+    
+}
+.length{
+    font-size: 26rpx;
+    flex: 1;
+    line-height: 100rpx;
+    
+}
+.artic{
+    font-size: 24rpx;
+    flex:2;
+    line-height: 100rpx;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.title image{
+     width: 80rpx;
+     height: 80rpx;
+     border-radius: 10rpx;
+}
+.title view{
+    width: 280rpx;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+    overflow:hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+
+}
+.music-bar:nth-child(even){
+    background-color:#f3eeee;
+}
+.scrollView{
+    height:calc(100vh - 382rpx);
+}
+
+

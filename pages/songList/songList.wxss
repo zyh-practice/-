@@ -1,0 +1,172 @@
+/* pages/songList/songList.wxss */
+.recommendContain{
+    height: 550rpx;
+    width: 100%;
+    background-image: linear-gradient(135deg,rgba(74,70,58,0.8),rgba(24,10,9,1));
+}
+.header{
+    position: relative;
+    padding: 20rpx;
+    padding-left: 30rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header image{
+    border-radius: 20rpx;
+    width: 250rpx;
+    height: 250rpx;
+    box-shadow: 2rpx 2rpx 2rpx #38261C;
+    
+}
+.actorData{
+    flex: 1;
+    height: 240rpx;
+    margin-left: 35rpx;
+    color: #FFFFFF;
+    font-family: '楷体';
+}
+.header .iconfont{
+    width: 200rpx;
+   position: absolute;
+   color: #FFFFFF;
+   font-size: 26rpx;
+   left: 75rpx;
+   top:40rpx;
+   overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.listName{
+    line-height: 40rpx;
+    font-size: 40rpx;
+    height: 80rpx;
+   
+   
+}
+.actorData image{
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+}
+.tag{
+    font-size: 28rpx;
+    margin-top: 15rpx;
+    margin-left: 5rpx;
+}
+.actorData .actorData-image{
+    
+    margin-top: 10rpx;
+    display: flex;
+    align-items: center;
+    
+}
+.actorName{
+    line-height: 100rpx;
+    margin-left: 20rpx;
+    font-size: 28rpx;
+}
+
+/* 图标区 */
+.navContainer{
+    margin-top: -20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.navItem{
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 28rpx;
+}
+.navItem .iconfont{
+    height:80rpx;
+    width: 80rpx;
+    font-size: 50rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color: white;
+
+}
+
+/* 底部列表区 */
+.nav-Contain{
+    padding-left:10rpx ;
+    border-radius: 20rpx;
+    width: 100%;
+    height: 500rpx;
+    background-color: #FFFFFF;
+    margin-top: -140rpx;
+}
+.listHeader{
+    display: flex;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 30rpx;
+}
+.listHeader .iconfont{
+    font-size: 50rpx;
+    flex: 1;
+    text-align: center;
+}
+.listHeader .bofang{
+    font-size: 30rpx;
+    flex: 9;
+   border-bottom: 1rpx solid #929292;
+}
+.listHeader .bofang text{
+    font-size: 26rpx;
+}
+
+/* list内容区 */
+.listItem{
+    display: flex;
+    height: 100rpx;
+}
+.itemIndex{
+    height: 100rpx;
+    flex: 1;
+    line-height: 100rpx;
+    text-align: center;
+
+}
+.itemData{
+    flex: 9;
+    border-bottom:1rpx solid #E0E0E0 ;
+    display: flex;
+    align-items: center;
+}
+.songData{
+    flex:7.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.itemData .iconfont{
+    flex: 1.2;
+    font-size: 50rpx;
+    
+}
+.songName{
+    width: 400rpx;
+    font-size: 35rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.songerName{
+    font-size: 24rpx;
+    color: #7F7F7F;
+    width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+scroll-view{
+    height: calc(100vh - 510rpx);
+}

@@ -1,0 +1,114 @@
+<!--pages/comments/comments.wxml-->
+<view class="contain ">
+    <!-- 头部作者区 -->
+    <view class="header ">
+        <image class="autorImage" src="{{song.al.picUrl}}"></image>
+        <text class="songName">{{song.name}}</text>
+        <text class="autorName">-{{song.ar[0].name}}</text>
+        <text style="font-size: 50rpx;margin-right: 10rpx;">·</text>
+        <text class="guanzu">关注</text>
+        <view class="other">ta的圈子</view>
+    </view>
+
+    <!-- 评论区 -->
+    <view class="bodyContain" wx:if="{{!forComment}}">
+        <!-- 评论区 -->
+        <view class="commentHeader">
+            <view class="commenttip">评论区</view>
+
+            <view class="{{isTrue[2]?'':'change'}}" bindtap="changeClass" data-index="2">最热</view>
+            <view style="color: #C0BEC1;">|</view>
+            <view class="{{isTrue[0]?'':'change'}}" bindtap="changeClass" data-index="0">推荐</view>
+            <view style="color: #C0BEC1;">|</view>
+            <view class="{{isTrue[1]?'':'change'}}" bindtap="changeClass" data-index="1">最新</view>
+        </view>
+        <!-- 评论内容区 -->
+        <scroll-view wx:if="{{isTrue[1]}}" bindscrolltolower="tobar" data-name="最新" bindscrolltolower="tobar">
+            <view class="scrollItem" wx:for="{{comments}}" wx:key="index">
+                <view class="userData">
+                    <image class="userImage" src="{{item.user.avatarUrl}}"></image>
+                    <view class="userName">
+                        <view class="name">{{item.user.nickname}}</view>
+                        <view class="date">{{isTrue[2]?hotComments[indexs].ipLocation.location:comments[indexs].ipLocation.location}}-{{item.timeStr}}</view>
+                    </view>
+                    <view class="goodNumber">{{item.likeCount}}<text class="iconfont icon-dianzan" style="font-size: 40rpx;"></text></view>
+                </view>
+                <view class="comment"> {{item.content}}</view>
+                <view bindtap="forcomment" data-index="{{index}}" wx:if="{{item.beReplied.length!=0}}" class="more">{{item.beReplied.length}}条回复 ></view>
+                <view class="border"></view>
+            </view>
+        </scroll-view>
+        <scroll-view wx:if="{{isTrue[2]}}" bindscrolltolower="tobar" scroll-y="true" style="height:1500rpx;" data-name="最热" bindscrolltolower="tobar">
+            <view class="scrollItem" wx:for="{{hotComments}}" wx:key="index">
+                <view class="userData">
+                    <image class="userImage" src="{{item.user.avatarUrl}}"></image>
+                    <view class="userName">
+                        <view class="name">{{item.user.nickname}}</view>
+                        <view class="date">{{isTrue[2]?hotComments[indexs].ipLocation.location:comments[indexs].ipLocation.location}}-{{item.timeStr}}</view>
+                    </view>
+                    <view class="goodNumber">{{item.likedCount}}<text class="iconfont icon-dianzan" style="font-size: 40rpx;"></text></view>
+                </view>
+                <view class="comment"> {{item.content}}</view>
+                <view bindtap="forcomment" data-index="{{index}}" wx:if="{{item.beReplied.length!=0}}" class="more">{{item.beReplied.length}}条回复 ></view>
+                <view class="border"></view>
+            </view>
+        </scroll-view>
+        <scroll-view wx:if="{{isTrue[0]}}" scroll-y="true" style="height:1500rpx;" bindscrolltolower="tobar" data-name="推荐">
+            <view class="scrollItem" wx:for="{{arr}}" wx:key="index">
+                <view class="userData">
+                    <image class="userImage" src="{{item.user.avatarUrl}}"></image>
+                    <view class="userName">
+                        <view class="name">{{item.user.nickname}}</view>
+                        <view class="date">{{isTrue[2]?hotComments[indexs].ipLocation.location:comments[index].ipLocation.location}}-{{item.timeStr}}</view>
+                    </view>
+                    <view class="goodNumber">{{item.likedCount}}<text class="iconfont icon-dianzan" style="font-size: 40rpx;"></text></view>
+                </view>
+                <view class="comment"> {{item.content}}</view>
+                <view bindtap="forcomment" data-index="{{index}}" wx:if="{{item.beReplied.length!=0}}" class="more">{{item.beReplied.length}}条回复 ></view>
+                <view class="border"></view>
+            </view>
+        </scroll-view>
+
+    </view>
+    <view class="{{forComment?'forComment':'tran'}}" wx:if="{{forComment}}" style="transition: bottom linear .3s; background-color: #f6f6f6;;">
+        <view style="background-color: #FFFFFF; padding: 30rpx 20rpx 20rpx 0;border-radius: 20rpx;">
+            <view class="scrollItem">
+                <view class="userData">
+                    <image class="userImage" src="{{isTrue[2]?hotComments[indexs].user.avatarUrl:comments[indexs].user.avatarUrl}}"></image>
+                    <view class="userName">
+                        <view class="name">{{isTrue[2]?hotComments[indexs].user.nickname:comments[indexs].user.nickname}}</view>
+
+                        <view class="date">{{isTrue[2]?hotComments[indexs].ipLocation.location:comments[indexs].ipLocation.location}}-{{isTrue[2]?hotComments[indexs].timeStr:comments[indexs].timeStr}}</view>
+                    </view>
+                    <view class="goodNumber">{{isTrue[2]?hotComments[indexs].likedCount:comments[indexs].likedCount}}<text class="iconfont icon-dianzan" style="font-size: 40rpx;"></text></view>
+                </view>
+                <view class="comment"> {{isTrue[2]?hotComments[indexs].content:comments[indexs].content}}</view>
+
+            </view>
+        </view>
+        <view style="background-color: #FFFFFF;margin-top: 30rpx; padding: 30rpx 20rpx;border-radius: 20rpx;">
+            <view style="display: flex; justify-content: space-between;align-items: center;margin-bottom: 30rpx;">
+                <view>
+                    共{{isTrue[2]?hotComments[indexs].beReplied.length:comments[indexs].beReplied.length}}条回复
+                </view>
+                <view class="iconfont icon-baocunshunxu"></view>
+            </view>
+            <scroll-view>
+                <view class="scrollItem" wx:for="{{isTrue[2]?hotComments[indexs].beReplied:comments[indexs].beReplied}}" wx:key="beRepliedCommentId">
+                    <view class="userData">
+                        <image class="userImage" src="{{item.user.avatarUrl}}"></image>
+                        <view class="userName">
+                            <view class="name">{{item.user.nickname}}</view>
+                            <view class="date">{{item.timeStr}}</view>
+                        </view>
+                        <view class="goodNumber">{{item.likeCount}}<text class="iconfont icon-dianzan" style="font-size: 40rpx;"></text></view>
+                    </view>
+                    <view class="comment"> {{item.content?item.content:item.richContent}}</view>
+                    <view class="border"></view>
+                </view>
+            </scroll-view>
+        </view>
+
+    </view>
+    <view bindtap="forcomment" class="{{forComment?'black':''}}" wx:if="{{forComment}}" style="transition: background-color linear .3s;"></view>
+</view>

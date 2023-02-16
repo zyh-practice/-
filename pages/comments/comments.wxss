@@ -1,0 +1,178 @@
+/* pages/comments/comments.wxss */
+.contain{
+    background-color: #f6f6f6;
+    height: 100%;
+}
+.header{
+    padding: 15rpx calc(4vw);
+    background-color: #FFFFFF;
+    height: 120rpx;
+    width:  calc(92vw);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.header image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+.songName{
+   margin-right: 20rpx;
+   white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200rpx;
+}
+.autorName{
+    margin-right: 10rpx;
+   font-size: 26rpx;
+   color: #77777e;
+   white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100rpx;
+}
+.guanzu{
+    font-size: 28rpx;
+    color: red;
+}
+.other{
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    position: absolute;
+    right: calc(4vw);
+    color: #4d42b1;
+    padding:10rpx 20rpx;
+    background-color: rgba(235,243,246);
+    border-radius: 40rpx;
+}
+
+
+
+/* body区域 */
+.bodyContain{
+    
+    margin-top: 20rpx;
+    padding: 15rpx calc(4vw);
+    background-color: #FFFFFF;
+}
+.commentHeader{
+    z-index: 99;
+    background-color: rgb(255,255,255,1);
+    display: flex;
+    justify-content:flex-end;
+    position: sticky;
+    height: 80rpx;
+    align-items: center;
+    top: 0rpx;
+}
+.commentHeader view{
+    line-height: 80rpx;
+    height: 80rpx;
+    margin-left: 10rpx;
+    font-size: 28rpx;
+}
+.change{
+    font-size: 26rpx !important;
+    color: #817f7f;
+}
+.commenttip{
+    font-size: 30rpx !important;
+    position: absolute;
+    left: 0rpx;
+}
+
+
+/* 内容区 */
+
+.userData{
+    display: flex;
+    height: 100rpx;
+    line-height: 100rpx;
+    position: relative;
+}
+.userData view{
+    margin-left: 10rpx;
+}
+.userData .date{
+    color: #9A9A9C;
+    font-size: 26rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+.userData .name{
+    font-size: 30rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+.userName{
+    box-sizing: border-box;
+    padding: 10rpx 0;
+}
+.userImage{
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 50%;
+}
+.goodNumber{
+    color: #65656b;
+    font-size: 28rpx;
+    position: absolute;
+    right: 0rpx;
+}
+
+
+/* 评论内容 */
+.comment{
+    box-sizing: border-box;
+    padding: 0 3rpx 0 110rpx;
+    font-size: 28rpx;
+    line-height: 45rpx;
+    color: #5e5555;
+}
+.more{
+    height: 60rpx;
+    line-height: 60rpx;
+    box-sizing: border-box;
+    padding-left: 110rpx;
+    color: #3d6d94;
+    font-size: 28rpx;
+}
+.border{
+    margin-top: 10rpx;
+    margin-left: 110rpx;
+    border-bottom: solid 1rpx #e7dede;
+}
+
+.tran{
+    height: calc(80vh);
+    position: absolute;
+    width: 100%;
+    background-color: #FFFFFF;
+    bottom: -1000rpx;
+    z-index: 1;
+    visibility: hidden;
+    border-radius: 30rpx;
+}
+.forComment{
+    height: calc(80vh);
+    position: absolute;
+    width: 100%;
+    background-color: #FFFFFF;
+    bottom: 0rpx;
+    z-index: 101;
+    border-radius: 30rpx;
+}
+.black{
+    background-color: #0e0d0d;
+    height: calc(100vh);
+    position: absolute;
+    width: 100%;
+    bottom: 0rpx;
+    z-index: 100;
+    opacity: .5;
+    
+}

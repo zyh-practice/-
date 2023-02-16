@@ -1,0 +1,60 @@
+<!--pages/search/search.wxml-->
+<view class="searchContainer">
+   <!-- 头部搜索区 -->
+    <view class="header">
+      <view class="searchInput">
+        <text class="iconfont icon-search1 searchIcon"></text>
+         <input type="text"  placeholder="{{placeholderContent}}" 
+         value="{{searchContent}}"
+         placeholder-class="placeholder"
+         bindinput="handInputChange"/>
+         <view class="clear" hidden="{{!searchContent}}" bindtap="clearSearchContent">X</view>
+      </view>
+      <text class="cancel">取消</text>
+    </view>
+    <!-- 搜索内容展示 -->
+   <block wx:if="{{searchContent}}">
+    <view class="showSearchContain">
+       <view class="searchContent">搜索内容：{{searchContain}}</view>
+       <scroll-view class="searchList" scroll-y 	bindscrolltolower="handleLower">
+         <view class="searchItem" wx:for="{{searchList}}" wx:key="id"
+         data-id="{{item.id}}"
+          bindtap="toDetail">
+            <text class="iconfont icon-search1"></text>
+            <text class="content">{{item.name}}</text>
+            <text class="artic">{{item.artists[0].name}}</text>
+         </view>
+       </scroll-view>
+    </view>
+   </block>
+
+    <!-- 热搜榜 -->
+    <block wx:else>
+   <view class="history" wx:if="{{historyList.length}}">
+      <view class="title">历史记录:</view>
+      <view class="historyItem" wx:for="{{historyList}}" wx:key="item" 
+      data-index="{{index}}"
+      bindtap="toHistorySearch">
+          {{item}}
+      </view>
+      <text class="iconfont icon-shanchu delete" bindtap="deleteSearchHistory"></text>
+   </view>
+
+    <view class="hotContainer">
+       <view class="title">热搜榜</view>
+      <!-- 热搜榜 -->
+      <view class="hotList">
+         <view wx:for="{{hotList}}" class="{{item.iconUrl?'hotItem':'hotItems'}}" wx:key="searchWord"
+         data-index="{{index}}"
+         bindtap="toSearch">
+           <text class="order">{{index+1}}</text>
+           <text>{{item.searchWord}}</text>
+           <image wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}"></image>
+         </view>
+      </view>
+    </view>
+    </block>
+</view>
+
+
+

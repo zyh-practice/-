@@ -1,0 +1,148 @@
+/* pages/index/index.wxss */
+/* 轮播图 */
+/* pages/video/video.wxss */
+ .header {
+    display: flex;
+    padding: 10rpx;
+  }
+ .header image{
+    width: 60rpx;
+    height: 60rpx;
+  }
+  
+   .header .search {
+    border: 1rpx solid #eee;
+    /*flex-grow: 可拉伸 flex-shrink： 可压缩 flex-basis: 当前元素的宽度*/
+    /*flex默认值: flex-grow: 0, flex-shrink: 1, flex-basis: auto*/
+    /*flex:1  flex-grow: 1, flex-shrink: 1, flex-basis: 0%*/
+    /*flex:auto  flex-grow: 1, flex-shrink: 1, flex-basis: auto*/
+    /*flex: 1会导致父元素宽度自动为100%*/
+    flex: 1;
+    margin: 0 20rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 60rpx;
+    color: #d43c33;
+  }
+
+
+
+.inner{
+    width: 100%;
+    height: 300rpx;
+}
+.inner image{
+    width: 100%;
+    height: 100%;
+}
+
+/* 图标导航区 */
+.navContainer{
+    
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20rpx;
+}
+.navItem .iconfont{
+    height:100rpx;
+    width: 100rpx;
+    border-radius: 50%;
+    font-size: 60rpx;
+    line-height: 100rpx;
+    text-align: center;
+    background-color: #FF280F;
+    color: white;
+
+}
+.navItem text{
+    font-size: 30rpx;
+}
+
+/* 推荐歌曲 */
+scroll-view{
+    height: 300rpx;
+}
+.recommendContainer{
+    margin-left: 20rpx;
+    
+}
+
+/* 推荐内容区 */
+.recommendScroll{
+    margin-left: -10rpx;
+    display: flex !important;
+}
+.scrollItem{
+    width: 200rpx;
+    margin-left: 10rpx;
+}
+.scrollItem image{
+    height: 200rpx;
+    width: 200rpx;
+    border-radius: 10rpx;
+}
+.scrollItem text{
+    font-size: 26rpx;
+    line-height: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient:vertical ;
+    -webkit-line-clamp: 2;
+}
+
+
+/* 排行榜 */
+.topList{
+    margin-left: 20rpx;
+}
+/* 内容区 */
+.toplistSwiper{
+    margin-top: 40rpx;
+    height: 400rpx;
+}
+.title{
+    font-size: 26rpx;
+    
+    margin-bottom: 20rpx;
+}
+.musicItem image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 10rpx;
+}
+.swiperItem{
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFBFB;
+}
+.musicItem{
+    display: flex;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+}
+  .count{
+      width: 90rpx;
+      height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    margin-left: 10rpx;
+    font-family: '楷体';
+}
+.musicName{
+    width: 400rpx;
+    line-height: 90rpx;
+   font-size: 30rpx;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+

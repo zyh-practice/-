@@ -1,0 +1,43 @@
+<!--pages/recommendList/recommendList.wxml-->
+<view class="recommendContain">
+<!-- 头部图片位置 -->
+    <view class="header">
+      <image src="{{recommendData.url}}"></image>
+      <view class="dataContain">
+         <text class="bangName">{{recommendData.name}} </text>
+         <text class="updataTime">最近更新于：{{recommendData.updateTime}}</text>
+         <view class="button">
+            <view class="custom-btn btn-11">播放</view>
+            <view class="custom-btn btn-11">收藏</view>
+         </view>
+      </view>
+    </view>
+
+<view class="bar-contain">
+   <view class="bar-header-contain">
+      <text class="musicListContent">歌曲列表</text>
+      <text class="musicCount">{{songList.length}}首歌</text>
+      <text class="dlCount">播放：{{recommendData.playCount}}次</text>
+   </view>
+   <!-- 歌曲区域 -->
+   <view class="musicContent">
+       <view class="music-header">
+          <view class="titleContent">标题</view>
+          <view class="lengthContent">时长</view>
+          <view class="articContent">歌手</view>
+       </view>
+      <scroll-view scroll-y="true" class="scrollView">
+        <view class="music-bar" wx:for="{{songList}}" wx:key="id"
+        bindtap="toDetail" data-id="{{item.id}}" data-index="{{index}}">
+          <view class="title">
+             <image src="{{item.al.picUrl}}"></image>
+             <view>{{item.al.name}}</view>
+           </view>
+          <view class="length">{{item.dt}}</view>
+          <view class="artic">{{item.ar[0].name}}</view>
+       </view>
+      </scroll-view>
+       
+   </view>
+</view>
+</view>

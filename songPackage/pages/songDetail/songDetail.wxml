@@ -1,0 +1,62 @@
+<!--pages/songDetail/songDetail.wxml-->
+<view class="songDetailContainer">
+   <view class="author">{{song.ar[0].name}}</view>
+   <block wx:if="{{!ishidden}}" >
+   <view class="lyricContain "  bindtap="tohidden">
+   <scroll-view 
+   scroll-y="true" 
+   scroll-into-view="{{'scroll'+timeid}}" 
+   enable-flex 
+   scroll-with-animation
+   enable-passive>
+      <view wx:for="{{allLyric}}" wx:key="id" class="scrollitem {{item.time<currentTimes&&allLyric[item.id+1].time>currentTimes?'lyice':''}}">
+        {{item.lyric}}
+      </view>
+    </scroll-view>
+   </view>
+</block>
+<block wx:if="{{ishidden}}"  >
+   <view class="circle"></view>
+   <image class="needle {{isPlay?'needleRoate':''}}" src="/static/images/song/needle.png"></image>
+   <view class="discContainer {{isPlay&&'discAnimation'}}"  bindtap="tohidden" >
+      <image class="disc" src="/static/images/song/disc.png"></image>
+      <image class="musicImage" src="{{song.al.picUrl}}"></image>
+   </view>
+</block>
+  
+<view class="icon">
+    <view class="iconfont dianzan"><image bindtap="changeLove" style="width: 50rpx;height:50rpx;" src="{{love?'/static/images/aixin1.png':'/static/images/dianzan.png'}}"></image> </view>
+   <view class="iconfont icon-xiazai"> </view>
+   <view class="iconfont icon-pinglun" bindtap="tocomment" ></view>
+</view>
+   <!-- 进度条 -->
+   <view class="progressCont">
+      <text>{{currentTime}}</text>
+      <!-- 拖拽区 -->
+      <view class="move" 
+      bindtouchend="touchEnd"
+      bindtouchmove="touchMove">
+      <view class=" {{move?'moves':''}} barControl" >
+      <!-- 实时进度条 -->
+         <view class="audio-currentTime-Bar {{move?'moves':''}}" style="width: {{currentWidth+'rpx'}}" >
+             <!-- 小圆圈 -->
+         <view class="audio-circle"></view>
+         </view>
+      </view>
+      </view>
+      <text>{{durationTime}}</text>
+   </view>
+   
+   <!-- 底部控制区 -->
+   <view class="musicControl">
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
+
+    <text class="iconfont icon-shangyishou" id="pre" bindtap="handleSwitch"></text>
+
+    <text class="iconfont {{isPlay?'icon-zanting': 'icon-bofang'}} {{isPlay?'size':'big'}}" bindtap="handleMusicPlay"></text>
+
+    <text class="iconfont icon-next" id="next" bindtap="handleSwitch"></text>
+
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
+  </view>
+</view>

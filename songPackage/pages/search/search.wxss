@@ -1,0 +1,136 @@
+/* pages/search/search.wxss */
+.searchContainer{
+    padding: 0 20rpx;
+    margin-top: 20rpx;
+}
+.header{
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 10rpx 0;
+}
+.searchInput{
+    position: relative;
+    flex: 1;
+    background-color: rgba(237, 237, 237, 0.3);
+    border-radius: 30rpx;
+}
+.clear{
+    position:absolute;
+    right:20rpx;
+    top: 0rpx;
+    height: 60rpx;
+    width: 100rpx;
+    text-align: center;
+    z-index: 99;
+}
+.cancel{
+    width: 100rpx;
+    text-align: center;
+}
+.searchIcon{
+    position: absolute;
+    left:15rpx;
+}
+.searchInput input{
+    height: 60rpx;
+    margin-left: 50rpx;
+}
+.placeholder{
+    color: #A8A8A8;
+    font-size: 28rpx;
+}
+
+/* 热搜 */
+.hotContainer .title{
+    font-size: 28rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 2rpx solid #eee;
+}
+.hotList{
+    display: flex;
+    flex-wrap: wrap;
+}
+.hotItem{
+    width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 26rpx;
+}
+.hotItems{
+    width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 26rpx;
+    color: #868686;
+}
+.order{
+    margin: 0 20rpx;
+}
+.hotItem image{
+    width: 35rpx;
+    height: 20rpx;
+   margin-left: 10rpx;
+}
+
+/* 搜索展示 */
+.searchContent{
+   color: #d43c33;
+   height: 80rpx;
+   line-height: 80rpx;
+   font-size: 28rpx;
+   border-bottom: 1rpx solid #d43c33; 
+}
+.searchItem{
+    line-height: 80rpx;
+    height: 80rpx;
+    display: flex;
+}
+.searchItem .content{
+    flex:1;
+    margin-left: 20rpx;
+    border-bottom: 1rpx solid #eee;
+    font-size: 26rpx;
+}
+.artic{
+    padding-right: 50rpx;
+    border-bottom: 1rpx solid #eee;
+    font-size: 26rpx;
+}
+.history{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 50rpx;
+}
+.history .title{
+    font-size: 28rpx;
+    height: 50rpx;
+}
+.historyItem{
+    padding: 0 20rpx;
+    height: 50rpx;
+    font-size: 26rpx;
+    margin:0 20rpx 10rpx;
+    background-color:#ededed ;
+    border-radius: 20rpx;
+   
+}
+.delete{
+    position: absolute;
+    right: 15rpx;
+    bottom: 10rpx;
+    font-size: 36rpx;
+    z-index: 1;
+}
+.historyItem:nth-last-child(2){
+    margin-right: 35rpx;
+}
+.searchList{
+    height: calc(100vh - 200rpx);
+    box-shadow: 4rpx 4rpx 8rpx rgb(182, 171, 171);
+}
+.searchItem:nth-child(odd){
+    background-color: rgba(168, 163, 163,.2);
+}

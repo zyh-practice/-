@@ -1,0 +1,57 @@
+<!--pages/songList/songList.wxml-->
+<view class="recommendContain">
+     <view class="header">
+         <image src="{{playList.coverImgUrl}}"></image>
+         <view class="iconfont icon-24gl-headphones">{{playList.subscribedCount}}</view>
+         <view class="actorData">
+             <text class="listName">{{playList.name}}</text>
+             <view class="tag">{{playList.tags[0]}},{{playList.tags[1]}},{{playList.tags[2]}}</view>
+             <view class="actorData-image">
+                <image src="{{playList.creator.avatarUrl}}"></image>
+                <text class="actorName">{{playList.creator.nickname}} ></text>
+             </view>
+         </view>
+     </view>
+     <!-- 图标导航区域 -->
+     <view class="navContainer">
+       <view class="navItem">
+          <text class="iconfont icon-pinglun"></text>
+          <text>评论</text>
+       </view>
+       <view class="navItem">
+        <text class="iconfont icon-fenxiang"></text>
+          <text>分享</text>
+       </view>
+       <view class="navItem">
+        <text class="iconfont icon-xiazai"></text>
+          <text>下载</text>
+       </view>
+       <view class="navItem">
+        <text class="iconfont icon-duoxuan"></text>
+          <text>多选</text>
+       </view>
+       
+    </view>
+
+</view>
+<view class="nav-Contain">
+   <view class="listHeader">
+     <view class="iconfont icon-bofang"></view>
+     <view class="bofang">播放全部<text>（共{{songList.length}}首）</text></view>
+   </view>
+   <scroll-view scroll-y="true"> 
+   <view class="listItem" wx:for="{{songList}}" wx:key="id" 
+   bindtap="toDetail" data-id="{{item.id}}">
+     <view class="itemIndex" >{{index+1}}</view>
+     <view class="itemData">
+     <view class="songData">
+        <text class="songName">{{item.name}}</text>
+        <text class="songerName">{{item.ar[0].name}}-{{item.al.name}}</text>
+     </view>
+     <view class="iconfont icon-24gl-playSquare"></view>
+     <view class="iconfont icon-iosgengduo"></view>
+    </view>
+   </view>
+
+   </scroll-view>
+</view>
